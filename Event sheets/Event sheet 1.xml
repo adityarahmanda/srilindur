@@ -1,0 +1,457 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="HighScore" sid="299729159542317" static="0" type="number">0</variable>
+        <variable constant="0" name="Score" sid="696921239062085" static="0" type="number">0</variable>
+        <variable constant="0" name="klik" sid="841437873322528" static="0" type="number">0</variable>
+        <variable constant="0" name="mandek" sid="427027842424311" static="0" type="number">0</variable>
+        <variable constant="0" name="mulai" sid="797214410647022" static="0" type="number">0</variable>
+        <event-block sid="717514647689769">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="821270827737668" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Car" id="8" name="Set enabled" sid="531144460857210" type="car">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="2" name="Stop" sid="221985397658325" type="car" />
+                <action id="0" name="Play" sid="632200913360018" type="Audio">
+                    <param id="0" name="Audio file">soundtracknya</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;backsound&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="515457133001688" type="SpriteFont7">
+                    <param id="0" name="Text">Text4.detik &amp; &quot; Detik&quot;</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="717502197599247" type="SpriteFont7">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="940265522691256">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="181505935599192" type="Keyboard">
+                    <param id="0" name="Key">32</param>
+                </condition>
+                <condition id="-10" name="Compare opacity" sid="442327592025649" type="car">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="Opacity">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Car" id="8" name="Set enabled" sid="988291028095559" type="car">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="228653745765915" type="car">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="0" name="Set text" sid="437194841893037" type="Text">
+                    <param id="0" name="Text">&quot;Gae en tombol seng panah - panah !&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="847084143362473" type="System">
+                    <param id="0" name="Variable">mulai</param>
+                    <param id="1" name="Value">time</param>
+                </action>
+                <action id="-9" name="Set value" sid="496172489724040" type="System">
+                    <param id="0" name="Variable">klik</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="2" name="Stop" sid="392455336388596" type="car" />
+            </actions>
+        </event-block>
+        <event-block sid="633493337509610">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="471912183463222" type="System">
+                    <param id="0" name="Variable">klik</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-10" name="Compare opacity" sid="139663572401480" type="car">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="Opacity">100</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="543780542664917" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Car" id="8" name="Set enabled" sid="991451350218916" type="car">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="229386949929962" type="car">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="0" name="Set text" sid="774391696872141" type="Text">
+                    <param id="0" name="Text">&quot;Gae en tombol seng panah- panah !&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="655876428073649" type="System">
+                    <param id="0" name="Variable">mulai</param>
+                    <param id="1" name="Value">time</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="946392141277843">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="576353115278761" type="car">
+                    <param id="0" name="Object">parkirr</param>
+                </condition>
+                <condition id="-10" name="Compare opacity" sid="758755828891700" type="9patch">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="Opacity">35</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Car" id="8" name="Set enabled" sid="575577466052229" type="car">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="410376311624004" type="System">
+                    <param id="0" name="Variable">mandek</param>
+                    <param id="1" name="Value">time</param>
+                </action>
+                <action id="0" name="Set text" sid="512335761366578" type="Text2">
+                    <param id="0" name="Text">&quot;kon ngentekne wektu : &quot;  &amp; round(mandek-mulai) &amp; &quot; detik&quot; &amp; newline &amp; &quot;suwene rek, &quot; &amp;  round(mandek-mulai-3) &amp; &quot; detik mari jan e&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="649885533916508" type="SpriteFont8">
+                    <param id="0" name="Text">&quot;mancing o belut ndek sawah ae lek suwe maen mu !!&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="741047799998812" type="SpriteFont5">
+                    <param id="0" name="Text">&quot;Waktumu  &quot;  &amp; round(mandek-mulai) &amp; &quot; detik&quot;</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="287432646556968" type="9patch">
+                    <param id="0" name="Opacity">35</param>
+                </action>
+                <action id="2" name="Set visible" sid="835336085375954" type="Button">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="2" name="Set visible" sid="514169888327925" type="Button2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-10" name="Add to" sid="490620538993597" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">round(mandek-mulai)</param>
+                </action>
+                <action id="0" name="Set text" sid="140814055971096" type="Text3">
+                    <param id="0" name="Text">&quot;Score&quot; &amp; Score</param>
+                </action>
+                <action id="-15" name="Set visible" sid="558477661699585" type="Text3">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="2" name="Stop" sid="707229171720868" type="car" />
+                <action id="-9" name="Set value" sid="662193039863355" type="System">
+                    <param id="0" name="Variable">timer</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="0" name="Play" sid="233927341801866" type="Audio">
+                    <param id="0" name="Audio file">pas menang</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="6" name="Stop" sid="240132750443944" type="Audio">
+                    <param id="0" name="Tag">&quot;backsound&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="525204339020572" type="Sprite5">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="748669713513975" type="Tilemap3">
+                    <param id="0" name="Opacity">50</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="659606009542158">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="772754956999268" type="System">
+                    <param id="0" name="First value">Score</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Second value">HighScore</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="879833702266693" type="System">
+                    <param id="0" name="Variable">HighScore</param>
+                    <param id="1" name="Value">Score</param>
+                </action>
+                <action id="0" name="Set text" sid="405825734583945" type="Text3">
+                    <param id="0" name="Text">&quot;Highscore : &quot; &amp; HighScore</param>
+                </action>
+                <action id="0" name="Set item" sid="527157115755599" type="LocalStorage">
+                    <param id="0" name="Key">&quot;testGame.score&quot;</param>
+                    <param id="1" name="Value">Score</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="666697294018105">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="126546702276144" type="car">
+                    <param id="0" name="Object">wall</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="241714289741177" type="Text">
+                    <param id="0" name="Text">&quot;goblok&quot;</param>
+                </action>
+                <action id="0" name="Play" sid="899055378453268" type="Audio">
+                    <param id="0" name="Audio file">pas nabrak</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-8" name="Set angle" sid="761048353520531" type="car">
+                    <param id="0" name="Angle">0</param>
+                </action>
+                <action id="-3" name="Set position" sid="392824761774688" type="car">
+                    <param id="0" name="X">166.277</param>
+                    <param id="1" name="Y">213.669</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="378301483304014">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="475823690014315" type="Keyboard">
+                    <param id="0" name="Key">38</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Start" sid="486296863859648" type="car">
+                    <param id="0" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="229055201763650">
+            <conditions>
+                <condition id="3" name="On key released" sid="123680770569818" type="Keyboard">
+                    <param id="0" name="Key">38</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="2" name="Stop" sid="479253080612862" type="car" />
+            </actions>
+        </event-block>
+        <event-block sid="646941076072827">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="845477702775236" type="Keyboard">
+                    <param id="0" name="Key">40</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Start" sid="916703797270284" type="car">
+                    <param id="0" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="744244258336985">
+            <conditions>
+                <condition id="3" name="On key released" sid="346314016874451" type="Keyboard">
+                    <param id="0" name="Key">40</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="2" name="Stop" sid="656348971900580" type="car" />
+            </actions>
+        </event-block>
+        <event-block sid="952629086193915">
+            <conditions>
+                <condition id="0" name="On clicked" sid="965856926314926" type="Button" />
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="186246923158487" type="System" />
+                <action id="2" name="Stop" sid="640909849288221" type="car" />
+            </actions>
+        </event-block>
+        <event-group description="" sid="385931832785166" title="SELESAI3">
+            <sub-events>
+                <event-block sid="632683319030458">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="310171748402544" type="Touch">
+                            <param id="0" name="Object">lanjut</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="178188541518892" type="System">
+                            <param id="0" name="Layout">main</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="551167530975148">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="996063891848409" type="Touch">
+                            <param id="0" name="Object">ulang</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Restart layout" sid="462079475466237" type="System" />
+                        <action id="2" name="Stop" sid="526929295504592" type="car" />
+                    </actions>
+                </event-block>
+                <event-block sid="934583939193942">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="402421690359583" type="Touch">
+                            <param id="0" name="Object">menu</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="759841168657934" type="System">
+                            <param id="0" name="Layout">main</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="408543132910369" title="TIMER2">
+            <sub-events>
+                <event-block sid="536017752095510">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="444060750691976" type="Keyboard">
+                            <param id="0" name="Key">38</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="446607263635812" type="System">
+                            <param id="0" name="Variable">timer</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="968525294412469">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="203560080439294" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="938584444163720" type="System">
+                            <param id="0" name="Variable">timer</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="364488248850057" type="Text4">
+                            <param id="0" name="Instance variable">detik</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="551649372102345">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="891403088223924" type="SpriteFont2">
+                            <param id="0" name="Instance variable">sec</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">60</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="582438137244954" type="System">
+                            <param id="0" name="Variable">timer</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="790484704125606" type="Text4">
+                            <param id="0" name="Instance variable">detik</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="310558418985022">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="693368410805251" type="System" />
+                        <condition id="-14" name="Compare variable" sid="449006648234662" type="System">
+                            <param id="0" name="Variable">timer</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="650098777571693" type="SpriteFont7">
+                            <param id="0" name="Text">Text4.detik &amp; &quot; Detik&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="544984637279181" title="SCORE LOGIC">
+            <sub-events>
+                <event-block sid="144162477815216">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="198955325214630" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Check item exists" sid="249205571222332" type="LocalStorage">
+                            <param id="0" name="Key">&quot;testGame.score&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="337521991512274">
+                    <conditions>
+                        <condition id="10" name="On item missing" sid="100870804525730" type="LocalStorage">
+                            <param id="0" name="Key">&quot;testGame_score&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set item" sid="561234613505652" type="LocalStorage">
+                            <param id="0" name="Key">&quot;testGame.score&quot;</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="810616297242807">
+                    <conditions>
+                        <condition id="9" name="On item exists" sid="958195163633360" type="LocalStorage">
+                            <param id="0" name="Key">&quot;testGame.score&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Get item" sid="263808078283726" type="LocalStorage">
+                            <param id="0" name="Key">&quot;testGame.score&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="233432623405143" type="System">
+                            <param id="0" name="Variable">HighScore</param>
+                            <param id="1" name="Value">LocalStorage.ItemValue</param>
+                        </action>
+                        <action id="0" name="Set text" sid="412246929768876" type="Text3">
+                            <param id="0" name="Text">&quot;Highscore : &quot; &amp; HighScore</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="972799221444302" title="SELESAI2">
+            <sub-events>
+                <event-block sid="926037418787972">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="814931983111263" type="Touch">
+                            <param id="0" name="Object">lanjut</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="222331576348765" type="System">
+                            <param id="0" name="Layout">Layout 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="643860228290737">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="150110892670044" type="Touch">
+                            <param id="0" name="Object">ulang</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Restart layout" sid="244059299084363" type="System" />
+                        <action id="2" name="Stop" sid="707138588430168" type="car" />
+                    </actions>
+                </event-block>
+                <event-block sid="842925231919077">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="108808354837822" type="Touch">
+                            <param id="0" name="Object">menu</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="406652136651523" type="System">
+                            <param id="0" name="Layout">main</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

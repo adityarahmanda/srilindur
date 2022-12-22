@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 3</name>
+    <events>
+        <variable constant="0" name="sound" sid="308584613558777" static="0" type="number">0</variable>
+        <variable constant="0" name="balen" sid="667435233421963" static="0" type="number">0</variable>
+        <variable constant="0" name="info" sid="234113546437848" static="0" type="number">0</variable>
+        <event-block sid="336001418233726">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="623018170969987" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="958611797783547" type="Audio">
+                    <param id="0" name="Audio file">pas introduction kalo perlu</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;introduction&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="604461585444233" type="Sprite12">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="6" name="Set speed" sid="826645261151431" type="Sprite4">
+                    <param id="0" name="Speed">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="589757222990725">
+            <conditions>
+                <condition id="3" name="On touched object" sid="911174198971067" type="Touch">
+                    <param id="0" name="Object">Sprite4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="217183332588172" type="System">
+                    <param id="0" name="Layout">Layout 2</param>
+                </action>
+                <action id="6" name="Stop" sid="113922031760733" type="Audio">
+                    <param id="0" name="Tag">&quot;introduction&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="346565859911445" type="System">
+                    <param id="0" name="Variable">balen</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="335983044644873">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="169896243682927" type="System">
+                    <param id="0" name="Variable">balen</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="242496079210702" type="Sprite9">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="272397368291989" type="Sprite3">
+                    <param id="0" name="Opacity">50</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="156278544383256" type="Sprite4">
+                    <param id="0" name="Opacity">30</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="593736326496915" type="Sprite11">
+                    <param id="0" name="Opacity">  30</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="156747773073423">
+            <conditions>
+                <condition id="2" name="Key is down" sid="217571014474743" type="Keyboard">
+                    <param id="0" name="Key">32</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="734175352623417" type="System">
+                    <param id="0" name="Variable">balen</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="838491316531155" type="Sprite9">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="831933479339872" type="Sprite3">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="725320087837034" type="Sprite4">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="-9" name="Set value" sid="517033419610195" type="System">
+                    <param id="0" name="Variable">balen</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="231722177941585">
+            <conditions>
+                <condition id="3" name="On touched object" sid="707951468140235" type="Touch">
+                    <param id="0" name="Object">Sprite10</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="237035315810338" type="System">
+                    <param id="0" name="Variable">sound</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="5" name="Is tag playing" sid="699495920180014" type="Audio">
+                    <param id="0" name="Tag">&quot;introduction&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="789176744523703" type="Sprite10">
+                    <param id="0" name="Opacity">50</param>
+                </action>
+                <action id="-9" name="Set value" sid="601889302353924" type="System">
+                    <param id="0" name="Variable">sound</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="8" name="Set silent" sid="956008018966801" type="Audio">
+                    <param id="0" name="Mode">0</param>
+                </action>
+                <action id="33" name="Stop all" sid="680141793543774" type="Audio" />
+            </actions>
+        </event-block>
+        <event-block sid="993421708369904">
+            <conditions>
+                <condition id="3" name="On touched object" sid="193816343676883" type="Touch">
+                    <param id="0" name="Object">Sprite11</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="637822930453661" type="System">
+                    <param id="0" name="Variable">balen</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="715699430863981" type="Sprite12">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="876618812574282" type="System">
+                    <param id="0" name="Variable">info</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="548048561132664" type="Sprite3">
+                    <param id="0" name="Opacity">50</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="434998379987378" type="Sprite4">
+                    <param id="0" name="Opacity">30</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="105260204625814" type="Sprite11">
+                    <param id="0" name="Opacity">  30</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="938342800425538">
+            <conditions>
+                <condition id="2" name="Key is down" sid="245766743375969" type="Keyboard">
+                    <param id="0" name="Key">32</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="163843025429037" type="System">
+                    <param id="0" name="Variable">info</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="150418719110855" type="Sprite12">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="673673426452847" type="Sprite3">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="182069275361133" type="Sprite4">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="-9" name="Set value" sid="715739296100722" type="System">
+                    <param id="0" name="Variable">info</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="355686786458850" type="Sprite11">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
